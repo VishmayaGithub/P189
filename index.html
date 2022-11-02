@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ant Run</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"
+        crossorigin="anonymous"></script>
+
+        <script src="./game.js"></script>
+
+
+</head>
+
+<body>
+
+    <a-scene id="scene" inspector-plugin-recast>
+
+        <a-assets>
+            <a-asset-item src="./assets/ant/scene.gltf" id="ant"></a-asset-item>
+        </a-assets>
+
+        <!--A-Frame Environment-->
+        <a-entity id="environment" environment="preset: forest; skyType:gradient; lighting:point">
+        </a-entity>
+
+        <!--Light-->
+        <a-entity light="type: ambient; color: white; intensity:0.5"></a-entity>
+        <a-entity light="type: directional; color: green; intensity: 0.2" position="0 -1 -1" rotation="0 10 0"></a-entity>
+<a-camera>
+    <a-entity gltf-model="#ant" position="0 -0.6 -1" scale="0.09 0.09 0.09"></a-entity>
+</a-camera>
+
+<a-entity id="sugar" sugar></a-entity>
+        
+
+    </a-scene>
+</body>
